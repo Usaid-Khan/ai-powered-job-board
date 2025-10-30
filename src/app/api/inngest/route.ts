@@ -1,3 +1,4 @@
+import { clerkCreateUser, clerkDeleteUser, clerkUpdateUser } from "@/src/services/clerk/functions/clerk";
 import { inngest } from "@/src/services/inngest/client";
 import { serve } from "inngest/next";
 
@@ -5,6 +6,8 @@ import { serve } from "inngest/next";
 export const { GET, POST, PUT } = serve({
   client: inngest,
   functions: [
-
+    clerkCreateUser,
+    clerkUpdateUser,
+    clerkDeleteUser
   ],
 });
