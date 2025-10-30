@@ -32,7 +32,7 @@ export const clerkCreateUser = inngest.createFunction(
                 throw new NonRetriableError("No primary email address found")
             }
 
-            insertUser({
+            await insertUser({
                 id: userData.id,
                 name: `${userData.first_name} ${userData.last_name}`,
                 imageUrl: userData.image_url,
